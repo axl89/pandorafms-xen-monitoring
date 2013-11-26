@@ -168,27 +168,28 @@ do
 
 	#In normal mode, the VM's will be created inside the agent that executes this agent plugin
 	if [ $STANDALONEMODE == false ]; then
-		pandora_module Xen_${a}_Status "$ST" "generic_proc" "$STATUS" ""
-		pandora_module Xen_${a}_CPU $CPU "generic_data" "CPU usage (%)" "%"
-		pandora_module Xen_${a}_MEM $MEM "generic_data" "Memory usage (%)" "%"
-		pandora_module Xen_${a}_VCPU $VCPU "generic_data" "Number of virtual CPU's" ""
-		pandora_module Xen_${a}_NET_TX $NET_TX "generic_data_inc" "Transmited kilobytes" "kB"
-		pandora_module Xen_${a}_NET_RX $NET_RX "generic_data_inc" "Received kilobytes" "kB"
-		pandora_module Xen_${a}_DISK_RD $DISK_RD "generic_data_inc" "Number of read requests" "requests"
-		pandora_module Xen_${a}_DISK_WR $DISK_WR "generic_data_inc" "Number of write requests" "requests"
-	else
-		echo "<?xml version='1.0' encoding='UTF-8'?>" >> $TMP_DIR/${a}.$TIMESTAMP.data
-		echo "<agent_data os_name='Other' interval='300' timestamp='`date +\"%y/%m/%d %H:%M:%S\"`' agent_name='$a'>" >> $TMP_DIR/${a}.$TIMESTAMP.data
-		pandora_module Xen_${a}_Status "$ST" "generic_proc" "$STATUS" "" >> $TMP_DIR/${a}.$TIMESTAMP.data
-    		pandora_module Xen_${a}_CPU $CPU "generic_data" "CPU usage (%)" "%" >> $TMP_DIR/${a}.$TIMESTAMP.data
-		pandora_module Xen_${a}_MEM $MEM "generic_data" "Memory usage (%)" "%" >> $TMP_DIR/${a}.$TIMESTAMP.data
-    		pandora_module Xen_${a}_VCPU $VCPU "generic_data" "Number of virtual CPU's" "" >> $TMP_DIR/${a}.$TIMESTAMP.data
-    		pandora_module Xen_${a}_NET_TX $NET_TX "generic_data_inc" "Transmited kilobytes" "kB" >> $TMP_DIR/${a}.$TIMESTAMP.data
-    		pandora_module Xen_${a}_NET_RX $NET_RX "generic_data_inc" "Received kilobytes" "kB" >> $TMP_DIR/${a}.$TIMESTAMP.data
-    		pandora_module Xen_${a}_DISK_RD $DISK_RD "generic_data_inc" "Number of read requests" "requests" >> $TMP_DIR/${a}.$TIMESTAMP.data
-    		pandora_module Xen_${a}_DISK_WR $DISK_WR "generic_data_inc" "Number of write requests" "requests" >> $TMP_DIR/${a}.$TIMESTAMP.data
-		echo "</agent_data>" >> $TMP_DIR/${a}.$TIMESTAMP.data
-	fi
+                pandora_module Xen_${a}_Status "$ST" "generic_proc" "$STATUS" ""
+                pandora_module Xen_${a}_CPU $CPU "generic_data" "CPU usage (%)" "%"
+                pandora_module Xen_${a}_MEM $MEM "generic_data" "Memory usage (%)" "%"
+                pandora_module Xen_${a}_VCPU $VCPU "generic_data" "Number of virtual CPU's" ""
+                pandora_module Xen_${a}_NET_TX $NET_TX "generic_data" "Transmited kilobytes" "kB"
+                pandora_module Xen_${a}_NET_RX $NET_RX "generic_data" "Received kilobytes" "kB"
+                pandora_module Xen_${a}_DISK_RD $DISK_RD "generic_data" "Number of read requests" "requests"
+                pandora_module Xen_${a}_DISK_WR $DISK_WR "generic_data" "Number of write requests" "requests"
+        else
+                echo "<?xml version='1.0' encoding='UTF-8'?>" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                echo "<agent_data os_name='Other' interval='300' timestamp='`date +\"%y/%m/%d %H:%M:%S\"`' agent_name='$a'>" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_Status "$ST" "generic_proc" "$STATUS" "" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_CPU $CPU "generic_data" "CPU usage (%)" "%" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_MEM $MEM "generic_data" "Memory usage (%)" "%" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_VCPU $VCPU "generic_data" "Number of virtual CPU's" "" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_NET_TX $NET_TX "generic_data" "Transmited kilobytes" "kB" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_NET_RX $NET_RX "generic_data" "Received kilobytes" "kB" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_DISK_RD $DISK_RD "generic_data" "Number of read requests" "requests" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                pandora_module Xen_${a}_DISK_WR $DISK_WR "generic_data" "Number of write requests" "requests" >> $TMP_DIR/${a}.$TIMESTAMP.data
+                echo "</agent_data>" >> $TMP_DIR/${a}.$TIMESTAMP.data
+        fi
+
 
 done
 
