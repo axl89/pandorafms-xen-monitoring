@@ -5,6 +5,12 @@ Agent plugin for monitoring XEN virtual environments using Pandora FMS monitorin
 
 ``pandorafms-xen-monitoring`` is an agent plugin  for Pandora FMS (http://pandorafms.com) monitoring solution.
 
+[Pandora FMS](http://pandorafms.com/)
+============
+
+Pandora FMS is a **flexible monitoring solution** for networks, servers, applications, virtual environments and much more.
+
+
 What does it monitor
 --------------------
 
