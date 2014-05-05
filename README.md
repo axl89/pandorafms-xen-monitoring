@@ -1,4 +1,4 @@
-pandorafms-xen-monitoring
+Pandora FMS Xen Monitoring
 =========================
 
 Agent plugin for monitoring XEN virtual environments using Pandora FMS monitoring software.
